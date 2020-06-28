@@ -19,11 +19,11 @@ grad = zeros(size(theta));
 
 
 pred=sigmoid(X*theta);
-
-J = (1/m) * (-y' * log(pred) - (1-y)' * log(1-pred)) + lambda/(2*m) * (theta(2:length(theta)))' * theta(2:length(theta));
-
 thet = theta;
 thet(1) = 0;
+J = (1/m) * (-y' * log(pred) - (1-y)' * log(1-pred)) + lambda/(2*m) * (thet)' * thet;
+
+
 grad = ((1/m) * ((pred -y)' * X)) + lambda/m * thet';
 
 
